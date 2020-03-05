@@ -14,7 +14,6 @@ var listID = [];
 io.on("connection", function(socket) {
   console.log("Someone just connected" + socket.id);
   listID.push(socket.id);
-  var listUser=[];
   socket.on("create-room", function(data) {
     socket.join(data);
     socket.room = data;
