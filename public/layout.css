@@ -1,15 +1,68 @@
 body{background-color: #a9cbeb}
 #wrapper{
-  width:600px
-  margin:auto
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #3b178f;
 }
-#txtUserName{
-  background-color: transparent;
-  border:solid 1px grey;
+.loginOuterContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color:#3b178f
 }
-#btnRegister{
-  background-color: ;
-  border:hide 1px
+
+.loginInnerContainer {
+    width:60%
+}
+.header {
+    color: white;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    width: 100%
+}
+
+#btnRegister {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #2979FF;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    width: 100%;
+}
+
+#txtUserName {
+    border-radius: 0;
+    padding: 15px 15px;
+    width: 79%;
+}
+#txtRoomName {
+    border-radius: 0;
+    padding: 15px 15px;
+    width: 79%;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .loginOuterContainer {
+        height: 100%;
+    }
+    .loginInnerContainer {
+        width: 90%;
+    }
+}
+
+btnRegister:focus {
+    outline: 0;
 }
 
 #left, #right:{
@@ -43,7 +96,8 @@ body{background-color: #a9cbeb}
 #listMessages{
   height:200px;
   background-color: #fcead4;
-  margin-bottom: 15px
+  margin-bottom: 15px;
+  text-align: left
 }
 #txtMessage {
   background-color: transparent;

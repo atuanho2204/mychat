@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>DEMO_CHAT</title>
     <script src="jquery.js"></script>
-    <script src="https://chatchet.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="layout.css">
 
@@ -16,10 +16,16 @@
       <div id="wrapper">
 
           <div id="loginForm">
-              <h3>WHAT'S YOUR NAME? </h3>
-              <input type="text" id="txtUserName"/>
-              <input type="button" value="Register" id="btnRegister"/>
-
+              <div class="loginOuterContainer">
+                  <div class="loginInnerContainer">
+                      <div class="header">Login</div>
+                        <div>
+                          <input type="text" placeholder="Name" class="mt-20" id="txtUserName"/>
+                          <input type="text" placeholder="Room name" class="mt-20" id="txtRoomName"/>
+                        </div>
+                      <input type="button" value="Register" class="mt-20" id="btnRegister"/>
+                  </div>
+              </div>
           </div>
 
           <div id="chatForm">
@@ -31,6 +37,7 @@
               </div>
               <div id="right">
                   <div id="sayHi">
+                      <div id="currentUser"></div>
                       <input type="button" id="btnLogout" value="Logout"/>
                   </div>
 
