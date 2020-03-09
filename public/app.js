@@ -1,5 +1,5 @@
-var socket= io("https://chatchet.herokuapp.com");
-//var socket = io("http://localhost:3000");
+//var socket= io("https://chatchet.herokuapp.com");
+var socket = io("http://localhost:3000");
 
 socket.on("server-send-false", function() {
     alert("Someone has taken this username. Please try again!!!");
@@ -49,8 +49,10 @@ $(document).ready(function() {
     });
 
     $("#btnSendMessage").click(function() {
-        socket.emit("client-send-message", $("#txtMessage").val());
-        $("#txtMessage").val("");
+        if ($("#txtMessage").val() != "") {
+            socket.emit("client-send-message", $("#txtMessage").val());
+            $("#txtMessage").val("");
+        }
     });
 
     $("#txtMessage").focusin(function() {
