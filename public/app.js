@@ -22,6 +22,8 @@ socket.on("server-send-listMessage", function(data) {
       $("#listMessages").append(
         "<div class='message'>" + update.user + ": " + update.message + "</div>"
       );
+      $("#listMessages").scrollTop($("#listMessages")[0].scrollHeight);
+
 });
 
 socket.on("server-someoneTexting", function(data) {
@@ -47,11 +49,19 @@ $(document).ready(function() {
         $("#loginForm").show(2000);
         $("#chatForm").hide();
     });
-
-    $("#btnSendMessage").click(function() {
-        if ($("#txtMessage").val() != "") {
-            socket.emit("client-send-message", $("#txtMessage").val());
-            $("#txtMessage").val("");
+    $('#txtMessage').keypress(function(e){
+        if (e.which === 13) {
+            if ($("#txtMessage").val() != "") {
+                socket.emit("client-send-message", $("#txtMessage").val());
+                $("#txtMessage").val("");
+            }
+        } else {
+            $("#btnSendMessage").click(function() {
+                if ($("#txtMessage").val() != "") {
+                    socket.emit("client-send-message", $("#txtMessage").val());
+                    $("#txtMessage").val("");
+                }
+            });
         }
     });
 

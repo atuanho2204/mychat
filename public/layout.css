@@ -64,19 +64,25 @@ body{background-color: #a9cbeb}
 btnRegister:focus {
     outline: 0;
 }
-
+#chatForm {
+  width: 50%;
+  height: 80%;
+  length: 800px
+}
 #left, #right:{
-  min-height:300px
+  min-height: 800px
 }
 #left{
   width:30%;
   float:left;
-  background-color: #e2e6ba
+  background-color: #e2e6ba;
+  border-radius: 5px;
 }
 #right{
   width:70%;
   float:right;
-  background-color: #d4f9f8
+  background-color: #d4f9f8;
+  border-radius: 5px;
 }
 #boxTitle{
   border: solid 1px black;
@@ -93,15 +99,23 @@ btnRegister:focus {
 #sayHi {
   text-align: right
 }
+#currentUser {
+  text-align: center
+}
 #listMessages{
-  height:200px;
+  height:300px;
   background-color: #fcead4;
   margin-bottom: 15px;
-  text-align: left
+  text-align: left;
+  overflow: auto;
 }
 #txtMessage {
   background-color: transparent;
-  border: solid 1px black
+  padding: 10px;
+  margin: 10px;
+  border: solid 1px black;
+  width: 70%;
+  height: 100%
 }
 #message {
   background-color: blue;
